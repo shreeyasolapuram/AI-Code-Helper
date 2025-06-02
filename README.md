@@ -1,71 +1,59 @@
-# shreeya-ai README
+AI-Powered Coding Assistant for VS Code
+This VS Code extension is designed to assist developers by providing detailed code explanations directly inside VS Code without requiring an internet connection. It integrates a locally running AI model to make AI-powered coding help fast, accessible, and seamless within your development workflow.
 
-This is the README for your extension "shreeya-ai". After writing up a brief description, we recommend including the following sections.
+Features
+AI-based code explanation: Generate detailed explanations of any code snippet or programming question inside VS Code.
 
-## Features
+Offline usage: Uses local AI models (Ollama API) so no internet connection is required.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Interactive UI: Uses VS Code’s WebView API for a rich, chat-like interface.
 
-For example if there is an image subfolder under your extension project workspace:
+Future enhancements planned:
 
-\!\[feature X\]\(images/feature-x.png\)
+Real-time error detection and explanations
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Automatic error fixing with one-click apply
 
-## Requirements
+Intelligent code autocompletion to speed up coding
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+How It Works
+The extension activates in VS Code and opens a WebView panel.
 
-## Extension Settings
+Users input code snippets or questions in the WebView chat interface.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+The input is sent to the Ollama API — a local AI model runner — using Axios HTTP requests.
 
-For example:
+Ollama processes the input and returns detailed explanations or code snippets.
 
-This extension contributes the following settings:
+The extension displays the AI’s response directly inside VS Code.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Technologies Used
+VS Code API and TypeScript for extension development
 
-## Known Issues
+WebView API for interactive user interface inside VS Code
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Ollama API to run AI models locally without internet
 
-## Release Notes
+Axios for HTTP requests to the Ollama API
 
-Users appreciate release notes as you update your extension.
+About the AI Model
+Currently, the extension uses DeepSeek R1: 1.5B — an AI model with 1.5 billion parameters.
 
-### 1.0.0
+Larger models (like 7B or more) can provide more accurate and efficient responses but require significantly more RAM and computing resources.
 
-Initial release of ...
+Future Roadmap
+Error Detection and Explanation: Detect syntax and logical errors in code and provide clear explanations.
 
-### 1.0.1
+Automatic Error Fixing: Offer one-click solutions to fix detected errors directly in the editor.
 
-Fixed issue #.
+AI-Powered Code Autocompletion: Suggest context-aware code completions to speed up coding, similar to GitHub Copilot.
 
-### 1.1.0
+How to Install and Use
+Download the extension .vsix file or install it from the VS Code marketplace (once published).
 
-Added features X, Y, and Z.
+Ensure the Ollama API is installed and running locally on your system.
 
----
+Open the extension’s WebView panel via the command palette.
 
-## Following extension guidelines
+Enter your code or questions and get instant AI-powered explanations.
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
